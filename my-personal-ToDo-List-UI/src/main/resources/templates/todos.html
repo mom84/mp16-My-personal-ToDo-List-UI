@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>ToDo</title>
+    <style type="text/css">
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+
+  input[type=text]{
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+    box-sizing: border-box;
+    width:20%;
+    text-align: middle;
+}
+
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #4CAF50;
+   # background-color: #333333;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 6px;
+    cursor: pointer;
+    margin-right: : 65px;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.adding {
+    text-align: center;
+}
+
+</style>
+</head>
+
+<body>
+<h1 class="adding" style="color:#4CAF50">The ToDo Application</h1>
+<h3 th:if="${#lists.isEmpty(allList)}">Will start now!</h3>
+<table th:if="${not #lists.isEmpty(allList)}" id="customers" align="center">
+    <thead>
+    <tr>
+        <th>Task</th>
+        <th>isDone</th>
+        <th>Done</th>
+        <th>Delete</th>
+        <th>UpdateTask</th>
+    </tr>
+    </thead>
+    <!--
+    <div name="id1" th:value="${list.id}">nn</div>
+    -->
+    <tbody>
+    <tr th:each="list : ${allList}">
+        <td th:text="${list.task}">1h 15m</td>
+        <td th:text="${list.done}">1h 15m</td>
+
+        <form  th:action="@{/done}"  th:method="Put">
+               <td style="display:none"><input type="text" name="id"  th:value="${list.id}"/></td>
+               <td><button type="submit" th:disabled="${list.done}">Done</button></td>
+        </form>
+
+
+        <form class="adding" th:action="@{/delete}" th:method="post">
+            <td style="display:none"><input type="text" name="id1" th:value="${list.id}"/></td>
+            <td><button type="submit">DeletTask</button></td>
+        </form>
+
+
+        <form th:action="@{/update}" th:method="post" class="adding">
+            <td style="display:none"><input type="text" name="id1" th:value="${list.id}"/></td>
+            <td><input type="text" name="taskname"/>
+            <button type="submit">UpdateTask</button></td>
+        </form>
+    </tr>
+
+    </tbody>
+</table>
+
+<br />
+
+
+<form class="adding" th:action="@{/todos}" th:object="${newToDo}" method="post" >
+    <label>Insert Task</label><br />
+    <input type="text" th:field="*{task}"/>
+    <button type="submit">Submit</button>
+</form>
+
+
+</body>
+</html>

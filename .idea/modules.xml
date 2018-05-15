@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/my-personal-ToDo-List-UI/mp16-My-personal-ToDo-List-UI.iml" filepath="$PROJECT_DIR$/my-personal-ToDo-List-UI/mp16-My-personal-ToDo-List-UI.iml" />
+      <module fileurl="file://$PROJECT_DIR$/my-Personal-ToDo-List/mp9-MyPersonalToDoList.iml" filepath="$PROJECT_DIR$/my-Personal-ToDo-List/mp9-MyPersonalToDoList.iml" />
+    </modules>
+  </component>
+</project>

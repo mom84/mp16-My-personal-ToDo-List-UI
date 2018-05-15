@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="mp16-My-personal-ToDo-List-UI" />
+        <module name="mp9-MyPersonalToDoList" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mp16-My-personal-ToDo-List-UI" target="9" />
+      <module name="mp9-MyPersonalToDoList" target="9" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
